@@ -1,91 +1,47 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Main from "@/components/main";
+import Image from "next/image";
+import Presentation from "./home/presentacion";
+import Review from "./home/review";
+import Link from "next/link";
+import NewReviews from "./home/newReviews";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <Presentation />
+      <Review />
+      <NewReviews />
+      <div className="bg-gray-100">
+        <div
+          className="container mx-auto flex justify-center py-8
+        "
+        >
+          <center className="grid gap-4 max-w-5xl justify-center">
+            <div className="text-3xl">About</div>
+            <div>
+              The Library Reviews es una comunidad literaria dedicada a explorar
+              el mundo de la literatura y compartir nuestras experiencias de
+              lectura con otros amantes de los libros. Nos apasiona leer y
+              estamos comprometidos en ofrecer reseñas literarias de calidad y
+              de manera honesta. Nos esforzamos por proporcionar información
+              útil sobre los libros que recomendamos para ayudar a nuestros
+              seguidores a encontrar la próxima gran aventura literaria.
+            </div>
+            <div>
+              {" "}
+              En The Library Reviews, estamos dedicados a proporcionar un
+              espacio acogedor y seguro para que los amantes de los libros se
+              conecten y compartan su amor por la literatura. Nos enorgullecemos
+              de nuestra comunidad de lectores apasionados y nos esforzamos por
+              fomentar discusiones respetuosas y significativas sobre los libros
+              que amamos. Si eres un amante de la literatura, esperamos que te
+              unas a nosotros en nuestra misión de explorar el mundo de los
+              libros y descubrir las mejores historias que el mundo literario
+              tiene para ofrecer.
+            </div>
+          </center>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
-  )
+  );
 }
