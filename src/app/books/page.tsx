@@ -16,27 +16,35 @@ export default async function Books() {
 
   const data = await fetching();
   return (
-    <div>
-      {data?.map((book) => (
-        <div key={book?.id}>
-          <Link href={"./books/" + book?.id}>
-            <img
-              width={"80"}
-              height={"80"}
-              src={CDN + book.image}
-              alt={book.title}
-            />
-            <h3> {book?.title}</h3>
-            {book?.categories?.map((datum) => (
-              <>{datum.name}, </>
-            ))}
-            {book?.authors?.map((datum) => (
-              <>{datum.name}, </>
-            ))}
-            
+    <div className="container mx-auto py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {data?.map((book) => (
+          <Link key={book?.id} href={"./books/" + book?.id} className="flex flex-col items-center bg-white shadow-md hover:shadow-lg rounded-lg p-4 transition duration-300 ease-in-out">
+
+              <img
+                className="w-40 h-40 object-cover object-center mb-4"
+                src={CDN + book.image}
+                alt={book.title}
+              />
+              <div className="text-center">
+                <h3 className="text-gray-900 font-medium text-md mb-2">
+                  {book?.title}
+                </h3>
+                <p className="text-gray-400 text-sm">
+                  {book?.categories?.map((datum) => (
+                    <span key={datum.id}>{datum.name}, </span>
+                  ))}
+                </p>
+                <p className="text-gray-400 text-sm">
+                  {book?.authors?.map((datum) => (
+                    <span key={datum.id}>{datum.name}, </span>
+                  ))}
+                </p>
+              </div>
+
           </Link>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
