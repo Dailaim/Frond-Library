@@ -1,10 +1,10 @@
-import React from 'react'
+import { component$ } from '@builder.io/qwik'
 
-export default function NavbarIcon() {
+export default component$(()=> {
   return (
     <svg
     xmlns="http://www.w3.org/2000/svg"
-    className="hover:text-gray-200"
+    class="hover:text-gray-200"
     fill="none"
     viewBox="0 0 24 24"
     width="30px"
@@ -19,4 +19,4 @@ export default function NavbarIcon() {
     />
   </svg>
   )
-}
+})

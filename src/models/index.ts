@@ -45,4 +45,10 @@ type user = {
   reviews: review[];
 };
 
-export type { user, image, category, author, review, book };
+type error = {
+	code:   number    
+	message: string 
+	error: any 
+}
+
+export type { user, image, category, author, review, book, error };

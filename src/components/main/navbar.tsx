@@ -1,51 +1,59 @@
-import Link from "next/link";
-import React from "react";
+import { component$ } from "@builder.io/qwik";
 import FacebookIcon from "../icons/facebook";
 import InstagramIcon from "../icons/instagram";
 import NavbarIcon from "../icons/navbar";
 import TwitterIcon from "../icons/twitter";
+import { Link } from "@builder.io/qwik-city";
 
-export default function Navbar() {
+export default component$(() => {
   return (
-    <div className="sticky top-0 overflow-hidden">
-      <nav className="flex justify-between bg-primary text-white w-screen ">
-        <div className="px-5 xl:px-12 py-6 flex w-full items-center  ">
-          <div className="hidden xl:flex items-center space-x-5 fixed">
-            <Link className="hover:text-gray-200" href="#">
+    <div class="sticky top-0 overflow-hidden">
+      <nav class="flex justify-between bg-primary text-white w-screen ">
+        <div class="px-5 xl:px-12 py-6 flex w-full items-center  ">
+          <div class="hidden xl:flex items-center space-x-5 fixed">
+            <Link class="hover:text-gray-200" href="#" title="Facebook">
               <FacebookIcon color="#ffffff" width="45px" height="45px" />
             </Link>
-            <Link className="flex items-center hover:text-gray-200" href="#">
+            <Link
+              class="flex items-center hover:text-gray-200"
+              href="#"
+              title="Instagram"
+            >
               <InstagramIcon color="#ffffff" width="45px" height="45px" />
             </Link>
 
-            <Link className="flex items-center hover:text-gray-200" href="#">
+            <Link
+              class="flex items-center hover:text-gray-200"
+              href="#"
+              title="Twitter"
+            >
               <TwitterIcon color="#ffffff" width="45px" height="45px" />
             </Link>
           </div>
 
-          <div className="grid flex-row justify-items-center mx-auto gap-2 font-semibold space-x-12 max-w-prose">
-            <div className="">
-              <Link className="hover:text-gray-200 text-3xl" href="/">
+          <div class="grid flex-row justify-items-center mx-auto gap-2 font-semibold space-x-12 max-w-prose">
+            <div class="">
+              <Link class="hover:text-gray-200 text-3xl" href="/">
                 The library reviews
               </Link>
             </div>
 
             <ul
-              className="hidden md:flex font-semibold gap-8 flex-row mr-0 text-xl"
+              class="hidden md:flex font-semibold gap-8 flex-row mr-0 text-xl"
               style={{ margin: "0px" }}
             >
               <li>
-                <Link className="hover:text-gray-200" href="/books">
+                <Link class="hover:text-gray-200" href="/books">
                   Books
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-200" href="#">
+                <Link class="hover:text-gray-200" href="#">
                   Perfil
                 </Link>
               </li>
               <li>
-                <Link className="hover:text-gray-200" href="/contact">
+                <Link class="hover:text-gray-200" href="/contact">
                   Contact Us
                 </Link>
               </li>
@@ -54,7 +62,8 @@ export default function Navbar() {
         </div>
 
         <Link
-          className="navbar-burger self-center mr-12 xl:hidden border-white border-[1px] rounded-lg p-1"
+          title="Menu"
+          class="navbar-burger self-center mr-12 xl:hidden border-white border-[1px] rounded-lg p-1"
           href="#"
         >
           <NavbarIcon />
@@ -62,4 +71,4 @@ export default function Navbar() {
       </nav>
     </div>
   );
-}
+});
